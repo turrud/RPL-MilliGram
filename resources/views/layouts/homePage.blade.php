@@ -2,26 +2,11 @@
 <!-- Component Start -->
 <div class="flex justify-center w-screen h-screen px-4 text-gray-700">
 	<div class="flex w-full max-w-screen-lg">
-		<div class="flex flex-col w-64 py-4 pr-3">
+		<div class="flex flex-col w-64 py-4 pr-3 mr-5">
             @include('layouts.sidebar')
-			{{-- <a class="px-3 py-2 mt-2 text-lg font-medium rounded-sm hover:bg-gray-300" href="#">Home</a>
-			<a class="px-3 py-2 mt-2 text-lg font-medium rounded-sm hover:bg-gray-300" href="#">Discover</a>
-			<a class="px-3 py-2 mt-2 text-lg font-medium rounded-sm hover:bg-gray-300" href="#">Notifications</a>
-			<a class="px-3 py-2 mt-2 text-lg font-medium rounded-sm hover:bg-gray-300" href="#">Inbox</a>
-			<a class="px-3 py-2 mt-2 text-lg font-medium rounded-sm hover:bg-gray-300" href="#">Saved Posts</a>
-			<a class="px-3 py-2 mt-2 text-lg font-medium rounded-sm hover:bg-gray-300" href="#">Groups</a>
-			<a class="px-3 py-2 mt-2 text-lg font-medium rounded-sm hover:bg-gray-300" href="#">Profile</a>
-			<a class="flex px-3 py-2 mt-2 mt-auto text-lg rounded-sm font-medium hover:bg-gray-200" href="#">
-				<span class="flex-shrink-0 w-10 h-10 bg-gray-400 rounded-full"></span>
-				<div class="flex flex-col ml-2">
-					<span class="mt-1 text-sm font-semibold leading-none">Username</span>
-					<span class="mt-1 text-xs leading-none">@username</span>
-				</div>
-			</a> --}}
-
 		</div>
 
-		<div class="flex flex-col flex-grow border-l border-r border-gray-300">
+		<div class="flex flex-col flex-grow border rounded border-l border-r mt-5 border-gray-300">
 			<div class="flex justify-between flex-shrink-0 px-8 py-4 border-b border-gray-300">
 				<h1 class="text-xl font-semibold">Feed Title</h1>
 				<button class="flex items-center h-8 px-2 text-sm bg-gray-300 rounded-sm hover:bg-gray-400">New post</button>
