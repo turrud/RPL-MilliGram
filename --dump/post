@@ -1,0 +1,25 @@
+<div class="d-flex flex-column">
+<img src="{{asset('images/posts/' . $post->image)}}" alt="{{$post->caption}}"
+        width="480px" height="480px" ondblclick="like({{$post->id}})"/>
+    <div class="card d-inline-flex">
+        <div class="pl-3 pt-3">
+        <p>
+            <span class="total_count" id="post-likescount-{{$post->id}}"> {{$post->likes_count}} </span>
+            <a href="#" class="text-dark" onclick="like({{$post->id}})" id="post-btn-{{$post->id}}">
+                {{ ($post->is_liked() ? 'unlike' : 'like' ) }}
+            </a>
+        </p>
+        <p>
+            <a class="text-dark font-weight-bold" href="/{{'@'.$post->user->username}}">{{$post->user->username}}</a>
+            <span class="captions"> {{$post->caption}} </span>
+        </p>
+        <p>
+            <small>
+                <a style="text-transform: uppercase; font-size: 0.85em;" class="text-muted">
+                    {{$post->created_at->diffForHumans()}}
+                </a>
+            </small>
+        </p>
+        </div>
+    </div>
+</div>

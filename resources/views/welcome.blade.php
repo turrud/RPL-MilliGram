@@ -25,7 +25,7 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
@@ -49,7 +49,7 @@
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
                             <div class="ml-12">
                                 <div class="mt-1 text-gray-600 dark:text-gray-400 text-sm">
-                                    MiLLigram adalah sebuah website sosial media  yang memungkinkan penguna untuk membagikan foto dan video ke jejaring sosial.
+                                    MiLLigram adalah sebuah website sosial media  yang memungkinkan penguna untuk membagikan gambar ke jejaring sosial.
                                 </div>
                             </div>
                         </div>
