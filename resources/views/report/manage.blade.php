@@ -10,7 +10,6 @@
                 <br>
             </div>
 
-            {{-- <h3>Feed @isset($querySearch) "{{$querySearch}}" @endisset</h3> --}}
             @forelse ($reports as $report)
             <div class="card">
 
@@ -18,9 +17,6 @@
                     <span class="pl-0" style="margin-top: auto; margin-bottom: auto;">
                         {{$report->created_at}}
                     </span>
-                    {{-- <span class="p-1 ms-auto">
-                        <x-reportpost :post="$post" :reporter="$user" />
-                    </span> --}}
 
                     <span style="margin: auto; text-align: center;">
                         <span class="text-dark font-weight-bold">Status : </span>
@@ -50,8 +46,6 @@
                     </form>
                 </div>
             <x-cardrow label="report_id" :value="$report->id"/>
-                {{-- <div class="card-body"> --}}
-                    {{-- <x-post :post="$post" /> --}}
             @if ($report->user_id == null)
                 <x-cardrow label="type" :value="'post'"/>
                 <x-cardrow label="post_id" :value="$report->post_id"/>
@@ -63,8 +57,6 @@
             @endif
 
             <x-cardrow label="report description" :value="$report->description"/>
-
-                {{-- </div> --}}
             </div>
             <br>
             @empty

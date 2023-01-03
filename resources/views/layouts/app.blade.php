@@ -14,17 +14,6 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    {{-- <link rel="stylesheet" href="{{ asset('/css/style.css')}}"> --}}
-    {{-- <style>
-.brightness {
-    background-color: white;
-    display: inline-block;
-
-}
-.brightness img:hover {
-    opacity: .5;
-}
-    </style> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -62,7 +51,6 @@
                                 <form style="margin: auto;" class="form-inline" action="/search" method="GET">
                                     <input name="query" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                                    {{-- <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-color="#ff00e5" style="background-color:#ff00e5;color:#ff00e5;border-color:#ff00e5;"> Search </button> --}}
                                 </form>
                             </li>
                         @endguest
@@ -86,12 +74,6 @@
                                 </li>
                             @endif
                         @else
-                            {{-- <li class="nav-item">
-                                <form style="margin: auto;" class="form-inline" action="/search" method="GET">
-                                    <input name="query" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                                </form>
-                            </li> --}}
                             <li class="nav-item">
                                     @if (Auth::user()->type == 'admin')
                                     <a class="nav-link" href="/report">Reports</a>
@@ -102,7 +84,6 @@
                             </li>
                             <li style="margin: auto;" class="nav-item">
                                 <x-avatar :user="Auth::user()" :w="30" :h="30" link="/{{'@' . Auth::user()->username}}" />
-                                {{-- <a class="nav-link" href="/{{ '@'.Auth::user()->username }}">{{ Auth::user()->username }}</a> --}}
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -57,48 +57,18 @@ class User extends Authenticatable
     }
     public function is_followed()
     {
-    //     // dd(Auth::user()->id);
-    //     dd($this->follower->get());
-    //     $count = 0;
         foreach($this->follower as $follower){
-            // dd($follower);
             $p=0;
                 foreach($follower as $f){
                     if($p==13){
                         if($f['id'] == Auth::user()->id){
                             return 1;
                         }
-                        // dd($f['id']);
-                        // dd($f);
                     }
                     $p++;
                 }
         }
         return 0;
-    //         $out = $follower;
-    //         foreach($out as $t){
-
-    //             try {
-    //                 // vardump($t);
-    //                 if($t->user_id == Auth::user()->id){
-
-    //                     return 1;
-    //                 }
-    //             } catch (\Throwable $th) {
-    //                 //throw $th;
-    //             }
-
-    //         }
-
-
-        // return $this->follower->items->where('follower_id', Auth::user()->id)->count();
     }
-    // public function followingsCount()
-    // {
-    //     return $this->following->count();
-    // }
-    // public function followersCount()
-    // {
-    //     return $this->follower->count();
-    // }
+
 }

@@ -39,27 +39,17 @@
 
 
             </div>
-            {{-- <div class="card-body d-inline-flex"> --}}
-                {{-- <div class=""> --}}
                     <img style="margin: auto; width: 100%; height: 100%;" class="card-img-bot" src="{{asset('images/posts/' . $post->image)}}" alt="{{$post->caption}}" width="670px" height="670px" ondblclick="like({{$post->id}})">
-                {{-- </div> --}}
-
-
-            {{-- </div> --}}
             <div class="card-footer pl-3 pr-3 bg-transparent d-inline-flex flex-column">
                 <div class="">
-                {{-- <p> --}}
                     <span class="total_count" id="post-likescount-{{$post->id}}"> {{$post->likes_count}} </span>
                     <a style="text-decoration: none;" href="javascript:void(0);" class="text-dark" onclick="like({{$post->id}})" id="post-btn-{{$post->id}}">
                         {{ ($post->is_liked() ? 'unlike' : 'like' ) }}
                     </a>
                 </div>
                 <div>
-                {{-- </p> --}}
-                {{-- <p> --}}
                     <a class="text-dark font-weight-bold" href="/{{'@'.$post->user->username}}">{{$post->user->username}}</a>
                     <span class="captions"> {{$post->caption}} </span>
-                {{-- </p> --}}
                 </div>
                 <div>
                     <small>

@@ -49,7 +49,7 @@
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
                             <div class="ml-12">
                                 <div class="mt-1 text-gray-600 dark:text-gray-400 text-sm">
-                                    MiLLigram adalah sebuah website sosial media  yang memungkinkan penguna untuk membagikan gambar ke jejaring sosial.
+                                    MiLLigram adalah sebuah website sosial media yang memungkinkan pengguna untuk membagikan gambar ke jejaring sosial.
                                 </div>
                             </div>
                         </div>

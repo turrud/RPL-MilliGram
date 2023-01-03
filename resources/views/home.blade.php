@@ -4,7 +4,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-auto">
-            {{-- <h3>Feed @isset($querySearch) "{{$querySearch}}" @endisset</h3> --}}
             @forelse ($posts as $post)
             @if (($post->status=='available' && $post->user->status=='available') || Auth::user()->type=='admin')
             <div class="card" style="width: 482px;" >
@@ -20,9 +19,6 @@
                             </span>
                         @endif
                     </span>
-                    {{-- <span class="p-1 ms-auto">
-                        <x-reportpost :post="$post" :reporter="$user" />
-                    </span> --}}
                     @if (Auth::user()->id == $post->user->id)
                     <span class="p-1 ms-auto">
                         <a href="/post/{{$post->id}}/edit">Edit</a>
@@ -37,11 +33,7 @@
                     </span>
                     @endif
                 </div>
-
-
-                {{-- <div class="card-body"> --}}
                 <x-post :post="$post" />
-                {{-- </div> --}}
             </div>
             <br>
             @endif

@@ -4,14 +4,12 @@
     <div class="row justify-content-center">
         <div class="col-md-auto" style="width: 62.9%">
             <div class="card">
-                {{-- <div class="card-header"></div> --}}
                 <div class="card-header pb-1 d-flex flex-row">
                     <span>
                         <h5>{{'@'.$user->username}}</h5>
                     </span>
                     <span class="ms-auto pr-1">
                         @if (Auth::user()->id == $user->id)
-                            {{-- <a><a> --}}
                         @elseif (Auth::user()->type == 'admin')
                         <form method="POST" action="/ban">
                             @csrf
@@ -59,7 +57,6 @@
                                 <span class="text-dark font-weight-bold">Followers</span>
                                 <span class="total_count" id="user-followerscount-{{$user->id}}"> {{$followersCount ?? '0'}} </span>
                             </div>
-                            {{-- <span>{{$followings}}</span> --}}
                         </span>
                         @endif
                     </div>
@@ -68,29 +65,21 @@
                         <button class="btn btn-outline-dark btn-block" onclick="website()">Business Website</button>
                     </div>
                     <div class="d-flex align-items-end">
-                        {{-- <div> --}}
                             <button class="btn btn-outline-dark btn-block" onclick="address()">Business Address</button>
-                        {{-- </div> --}}
-                        {{-- <div> --}}
                             <button class="btn btn-outline-dark btn-block" onclick="contact()">Business Contacts</button>
-
-                        {{-- </div> --}}
                     </div>
                     @endif
                     <script>
                         function website(){
                             var web = {!! json_encode($user->business_website) !!};
-                            // alert('Business Website\n'+web);
                             prompt("Copy to clipboard: Ctrl+C, Enter", web);
                         }
                         function address(){
                             var adr = {!! json_encode($user->business_address) !!};
-                            // alert('Business Website\n'+web);
                             prompt("Copy to clipboard: Ctrl+C, Enter", adr);
                         }
                         function contact(){
                             var con = {!! json_encode($user->business_contact) !!};
-                            // alert('Business Website\n'+web);
                             prompt("Copy to clipboard: Ctrl+C, Enter", con);
                         }
                         function follow(id, el) {
@@ -110,23 +99,17 @@
                                         el.innerText = 'Follow'
                                     }
                                     followersCount.innerHTML = currentCount
-
-                                    // el.innerText = (data.status == 'FOLLOW') ? 'Unfollow' : 'Follow'
                                 });
                         }
                     </script>
                 </div>
                 <div class="card-footer bg-transparent pl-0 pr-0 pt-0 pb-1">
-                    {{-- <h3>Feed</h3> --}}<div class="d-inline-flex flex-wrap flex-row">
+                    <div class="d-inline-flex flex-wrap flex-row">
                     @foreach ($user->posts->reverse() as $post)
                     @if ($post->status=='available' || Auth::user()->type=='admin')
-                            {{-- <div class=""> --}}
-                            {{-- <div class="hover-img"> --}}
                                 <a href="post/{{$post->id}}">
                                     <img class="card-img-bot pl-1 pt-1" style="width: 200px; height: 200px;" src="{{asset('images/posts/' . $post->image)}}" alt="{{$post->caption}}" width="200px" height="200px"/>
                                 </a>
-                            {{-- </div> --}}
-                            {{-- </div> --}}
                     @endif
                     @endforeach
                 </div>

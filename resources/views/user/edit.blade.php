@@ -16,8 +16,9 @@
                         <x-fileuploadmid label="Avatar" name="avatar" />
 
                         @if (Auth::user()->type != "regular")
-                            <x-textareamid label="Business Address" name="business_address" :object="$user" />
                             <x-input label="Business Website" name="business_website" :object="$user" type="url" pattern="https://.*"  placeholder="https://example.com" />
+                            <x-textareamid label="Business Address" name="business_address" :object="$user" />
+                            <x-input label="Business Contact" name="business_contact" :object="$user"/>
                         @endif
                         <x-submitbtn text="Update Profile" />
                     </form>

@@ -14,18 +14,13 @@ class UserController extends Controller
         $user = User::with('posts')->where('username', $username)->first();
         if(!$user) abort(404);
 
-        // $followingsCount=0;
-        // $followersCount=0;
-        // dd(User::withCount('follower')->where('username','=',$username)->get());
-
         foreach(User::withCount('following')->where('username','=',$username)->get() as $following){
             $followingsCount = $following->following_count;
         }
         foreach(User::withCount('follower')->where('username','=',$username)->get() as $follower){
             $followersCount = $follower->follower_count;
         }
-        // $followingsCount = User::withCount('following')->where('username','=',$username)->get()->count();
-        // $followersCount = User::withCount('follower')->where('username','=',$username)->get()->count();
+
         return view('user.profile', compact('user','followingsCount','followersCount'));
     }
     public function edit()
@@ -81,22 +76,6 @@ class UserController extends Controller
         ]);
         return redirect('/@'.$user->username);
     }
-
-
-    // public function follow()
-    // {
-    //     $user = Auth::user();
-    //     if($user->following->contains($following_id)){
-    //         $user->following()->detach($following_id);
-    //         $message = ['status' => 'FOLLOW'];
-    //     }
-
-    //     return response()->json($message);
-    // }
-    // public function countFollow(Request $request){
-
-
-    // }
     public function follow($following_id)
     {
         $user = Auth::user();

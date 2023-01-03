@@ -1,36 +1,30 @@
 <?php
-// 2022_12_14_132948_create_posts_table
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace App\Models;
 
-return new class extends Migration
+use Auth;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->string('image');
-            $table->string('caption')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
-        });
-    }
+    use HasFactory;
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('posts');
-    }
-};
+    protected $guarded = ['id'];
+    protected $fillable = ['caption','image'];
+
+    // public function user()
+    // {
+    //     return $this->belongsTo('App\Models\User');
+    // }
+
+    // public function likes()
+    // {
+    //     return $this->hasMany('App\Models\Like');
+    // }
+
+    // public function is_liked()
+    // {
+    //     return $this->likes->where('user_id', Auth::user()->id)->count();
+    // }
+}
